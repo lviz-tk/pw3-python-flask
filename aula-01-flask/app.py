@@ -12,13 +12,17 @@ app = Flask(__name__, template_folder='views')
 def home():
     return render_template('index.html')
 
-@app.route('/gays')
-def gays():
-    return render_template('gays.html')
+@app.route('/games')
+def games():
+    jogo = "Portal 2"
+    ano = "2011"
+    genero = "Puzzle"
+    
+    return render_template('games.html')
 
-@app.route('/yaois')
-def yaois():
-    return render_template('yaois.html')
+@app.route('/consoles')
+def consoles():
+    return render_template('consoles.html')
 
 # iniciar servidor na porta 5000, verificando se o arquivo é o main
 if __name__ == '__main__':
