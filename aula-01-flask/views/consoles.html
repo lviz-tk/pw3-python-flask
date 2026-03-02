@@ -6,6 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    receba
+    <h1>console mais tuff</h1>
+    {% for chave, valor in console.items() %}
+    <details>
+        <summary>{{chave}}</summary>
+        <p>{{valor}}</p>
+    </details>
+    {% endfor %}
 </body>
 </html>

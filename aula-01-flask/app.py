@@ -15,14 +15,20 @@ def home():
 @app.route('/games')
 def games():
     jogo = "Portal 2"
-    ano = "2011"
+    ano = 2011
     genero = "Puzzle"
+    
+    jogadores = ['Marcos', 'Richard', 'Kirk', 'Epstein', 'Floyd']
     
     return render_template('games.html')
 
 @app.route('/consoles')
 def consoles():
-    return render_template('consoles.html')
+    # criando um objeto
+    console = {"Nome": "Playstation 2", 
+               "Fabricante": "Sony", 
+               "Ano": 2000}
+    return render_template('consoles.html', console=console)
 
 # iniciar servidor na porta 5000, verificando se o arquivo é o main
 if __name__ == '__main__':
