@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+  
+{% block content %}
+
+    <a href="index.html">Voltar</a>
+
+    <h2>jogo mais tuff</h2>
+    <p>o jogo mais tuff de todos</p>
+    <ul>
+        <li>titulo: {{titulo}} </li>
+        <li>ano: {{ano}}</li>
+        <li>genero: {{genero}}</li>
+        <li>O jogo {{titulo}} tem {{2026-ano}}</li>
+    </ul>
+    <h3>plyeres mais tuff</h3>
+    <ol>
+        {% for jogador in jogadores: %}
+        <li>{{jogador}}</li>
+        {% endfor %}
+    </ol>
+
+{% endblock content %}
