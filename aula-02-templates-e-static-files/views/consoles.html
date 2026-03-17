@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
   
 {% block content %}
+<main>
+    
     <h1>console mais tuff</h1>
     {% for chave, valor in console.items() %}
     <details>
@@ -9,4 +11,5 @@
     </details>
     {% endfor %}
 
+</main>
 {% endblock content %}

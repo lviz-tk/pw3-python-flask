@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
   
 {% block content %}
-
+<main>
+    
     <h1>bem vindo ao tuff games!!!</h1>
     <h3>Seu site favorito de jogos tuff!!</h3>
 
-    <h4>menu</h4>
-    <ul>
-        <li><a href="/games">página de games</a></li>
-        <li><a href="/consoles">página de consoles</a></li>
-    </ul>
+    <img src="{{url_for('static', filename='/imgs/tuffsigmawolf.png')}}" 
+    alt="tuff sigma wolf image"
+    width="720px">
 
+</main>
 {% endblock content %}

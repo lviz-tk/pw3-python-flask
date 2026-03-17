@@ -20,7 +20,7 @@ def games():
     
     jogadores = ['Marcos', 'Richard', 'Kirk', 'Epstein', 'Floyd']
     
-    return render_template('games.html')
+    return render_template('games.html', jogo=jogo)
 
 @app.route('/consoles')
 def consoles():
