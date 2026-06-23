@@ -1,6 +1,5 @@
-
-from flask import Flask, render_template, request
-
+from flask import render_template, request, redirect, url_for
+from models.database import Game, db
 
 app = Flask(__name__, template_folder='views')
 
@@ -44,4 +43,30 @@ def init_app(app):
 
     @app.route('/estoque', methods=['GET','POST'])
     def estoque():
-        return render_template('estoque.html')
+        # condição para verificar se o usuario esta enviando uma requisição post (cadastro)
+        if request.method == 'POST':
+            # realiza o cadastro
+            # coletando os dados do formulário
+            # pega os dados do form e transforma em um dicionario
+            dados = request.form.to_dict()
+            # enviando os dados para o Model
+            newgame = Game(
+                dados['titulo'],
+                dados['ano'],
+                dados['categoria'],
+                dados['plataforma'],
+                dados['preco'],
+                dados['quantidade']
+            )
+            # metodo do SQLAlchemy para gravar no banco
+            db.session.add(newgame)
+            # confirmação 
+            db.session.commit()
+            return redirect(url_for('estoque'))
+        
+        
+        # selecionando todos os jogos da tabela
+        games = Game.query.all()
+        return render_template('estoque.html', games=games)
+    
+    
